@@ -8,7 +8,7 @@ router.get("/", (req, res) => {
     try {
         if (!text) throw new Error("no text");
 
-        res.json({ text: text.split("").reverse().join("") });
+        res.status(200).json({ text: text.split("").reverse().join("") });
     } catch (error) {
         res.status(400).json({ error: error.message });
     }
