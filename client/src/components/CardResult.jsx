@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Card, ListGroup } from "react-bootstrap";
+import "./css/CardResult.css";
 
 export default function CardResult() {
     console.log("render: CardResult");
@@ -23,7 +24,7 @@ export default function CardResult() {
             <Card style={{ width: "100%" }} className="mt-5">
                 <Card.Body>
                     <Card.Title>Results:</Card.Title>
-                    <Container className="col-lg-8">
+                    <Container className="col-lg-8 container-results">
                         {items.map((item, index) => (
                             <ListGroup key={index} className="my-2">
                                 <ListGroup.Item>{item}</ListGroup.Item>
