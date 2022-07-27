@@ -70,3 +70,18 @@ describe("Petición a /iecho de forma correcta", () => {
         }).timeout(5000);
     }
 });
+
+describe("Petición a /iecho de texto palindrome", () => {
+    const textos = ["asdfdsa", "sub derp pred bus", "12345654321"];
+
+    for (let i = 0; i < textos.length; i++) {
+        it(`GET /iecho?text=${textos[i]} retorna {text:'${textos[i]}', palindrome:true}`, async () => {
+            const response = await request.get(`/iecho?text=${textos[i]}`);
+            expect(response.status).to.equal(200);
+            expect(response.body).to.deep.equal({
+                text: textos[i],
+                palindrome: true,
+            });
+        });
+    }
+});
