@@ -7,7 +7,7 @@ import "./css/NavBar.css";
 export default function NavBar() {
     const dispatch = useDispatch();
 
-    const onClick = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
 
         const search_input = document.getElementById("search-input");
@@ -23,7 +23,7 @@ export default function NavBar() {
 
     return (
         <Navbar bg="danger" expand="lg">
-            <Form className="d-flex mx-auto search-bar">
+            <Form className="d-flex mx-auto search-bar" onSubmit={handleSubmit}>
                 <Form.Control
                     type="search"
                     placeholder="Insert Text"
@@ -31,11 +31,7 @@ export default function NavBar() {
                     aria-label="Search"
                     id="search-input"
                 />
-                <Button
-                    variant="primary"
-                    className="btn-send"
-                    onClick={onClick}
-                >
+                <Button variant="primary" className="btn-send" type="submit">
                     Send
                 </Button>
             </Form>
