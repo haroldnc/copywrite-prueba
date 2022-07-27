@@ -1,23 +1,12 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Container, Card, ListGroup } from "react-bootstrap";
 import "./css/CardResult.css";
 
 export default function CardResult() {
+    const text_list = useSelector((state) => state.text_list);
+
     console.log("render: CardResult");
-    const items = [
-        "Doceavo Item",
-        "Onceavo Item",
-        "Decimo Item",
-        "Noveno Item",
-        "Octavo Item",
-        "Septimo Item",
-        "Sexto Item",
-        "Quinto Item",
-        "Cuarto Item",
-        "Tercer Item",
-        "Segundo Item",
-        "Primer Item",
-    ];
 
     return (
         <Container className="col-lg-8">
@@ -25,7 +14,7 @@ export default function CardResult() {
                 <Card.Body>
                     <Card.Title>Results:</Card.Title>
                     <Container className="col-lg-8 mb-3 container-results">
-                        {items.map((item, index) => (
+                        {text_list.map((item, index) => (
                             <ListGroup key={index} className="my-2">
                                 <ListGroup.Item>{item}</ListGroup.Item>
                             </ListGroup>
