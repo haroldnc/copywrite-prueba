@@ -4,7 +4,7 @@ import axios from "axios";
 export function newText(text) {
     return async (dispatch) => {
         return await axios
-            .get(`https://localhost:3001/iecho?text=${text}`)
+            .get(`http://localhost:3001/iecho?text=${text}`)
             .then((res) =>
                 dispatch({
                     type: NEW_TEXT,
