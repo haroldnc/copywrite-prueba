@@ -10,7 +10,10 @@ router.get("/", (req, res) => {
 
         const reversed = text.split("").reverse().join("");
 
-        res.status(200).json({ text: reversed, palindrome: text === reversed });
+        res.status(200).json({
+            text: reversed,
+            palindrome: text === reversed ? true : undefined,
+        });
     } catch (error) {
         res.status(400).json({ error: error.message });
     }
